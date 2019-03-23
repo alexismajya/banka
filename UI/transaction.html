@@ -1,0 +1,134 @@
+<!DOCTYPE htmal>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="sizeView" content="width=device-width">
+		<meta name="description" content="A bank services software">
+		<meta name="keyword" content=" A bank services software">
+		<title>Banka | Transaction</title>
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+	</head>
+	<body>
+		<header>
+		<div class="container">
+			<div id="brand">
+				<h1>Banka system</h1>
+			</div>
+			<nav>
+				<ul>
+					
+					<li class="current"><a href="transaction.html">transaction</a></li>
+					<li><a href="#">View account</a></li>
+					<li><a href="login.html">Logout</a></li>
+				</ul>
+			</nav>
+
+
+		</div>
+		</header>
+		<section id="display">
+			<div class="container">
+					
+				<h1> TRANSACTION MANAGEMENT</h1>
+				<form id="transEntrylegend" method="POST">
+					<h1> TRANSACTION ENTRY</h1>
+
+					<div  id="feedback"></div>
+					
+					<p>Date of transaction </p>
+					<input type="date"id="date" placeholder="Select the date..."  />
+					<p> Specify transaction type</p>
+					<select id="transtype"/>
+					<option value="null">--select the type here--</option>
+					 <option value="debit">Debit/withdraw</option>
+					 <option value="credit">Credit/Deposit</option>
+				    </select>
+					<p>Account number</p>
+					<input type="number"id="AccNum" placeholder="Enter the account number..."  />
+					<p>Cashier</p>
+					<input type="text"id="cashier" disabled="disabled" />
+					<p>Amount</p>
+					<input type="number" required="required" id="amount" placeholder="Enter the amount..."  />
+
+					
+					
+				    <input onclick="saveRecords()" onload="viewRecords()" type="submit" class="butt" id="Save transaction" value="SAVE TRANSACTION"/>
+		
+				
+			    </form>
+			    <form id="transOutpulegend" method="POST">
+			    	<h1> LIST OF TRANSACTIONS</h1>
+			    	<table id="transactTable">
+			    		<thead>
+<th>No</th>
+<th>Date</th>
+<th>Type</th>
+<th>Account</th>
+<th>Casher</th>
+<th>Amount</th>
+<th>Balance</th>
+<th>Action</th>
+			    		</thead>
+			    		<tbody>
+
+			    		</tbody>
+			    	</table>
+					
+					
+					
+			    </form>
+			</div>
+	<script type="text/javascript">
+	var RecordsArrays=[];
+	function saveRecords(){
+var No=null;
+var date=document.getElementById('date').value;	
+var type=document.getElementById('transtype').value;
+var account=document.getElementById('AccNum').value;
+var cashier=document.getElementById('cashier').value;
+var amount=document.getElementById('amount').value;	
+var balance=null;	
+
+var TransObject={NoT:No, dateT: date, typeT:type, accountT: account, cashierT:cashier, amountT:amount, balanceT:balance};
+
+RecordsArrays.push(TransObject);
+localStorage.transactionRecords=JSON.stringify(RecordsArrays);	
+document.getElementById('feedback').innerHTML="Saved";
+
+tablecells(No,date,type,account,cashier,amount,balance);			}
+   function tablecells(No,date,type,account,cashier,amount,balance){
+	var tab=document.getElementById("transactTable");
+	var newrow=tab.insertRow();
+
+	newrow.insertCell(0).innerHTML=No;
+	newrow.insertCell(1).innerHTML=date;
+	newrow.insertCell(2).innerHTML=type;
+	newrow.insertCell(3).innerHTML=account;
+	newrow.insertCell(4).innerHTML=cashier;
+	newrow.insertCell(5).innerHTML=amount;
+	newrow.insertCell(6).innerHTML=balance;
+
+	newrow.insertCell(7).innerHTML='<input type="button" class="buttEdit" value="edit record"/></br> <input onclick="deleteRecord()" type="button" class="buttDel" value="Delete" />'
+function deleteRecord(){
+	var tab=document.getElementById("transactTable");
+	//var index=tab.rows.selected.rowIndex;
+	//tab.deleteRow("...");
+}
+function viewRecords(){
+	document.getElementById('transactTable');
+		if(localStorage.transactionRecords){
+		RecordsArrays=JSON.parse(localStorage.transactionRecords);
+	}
+for(var i=0; i<RecordsArrays.length;i++){
+	tablecells(RecordsArrays[i].NoT,RecordsArrays[i].dateT,RecordsArrays[i].typeT,RecordsArrays[i].accountT,RecordsArrays[i].amountT,RecordsArrays[i].balanceT);
+}
+}
+}
+			</script>
+		</section>
+		
+		<footer>
+			<p>Alexis (alexismajyambere2@gmail.com), copyright &copy; 2019</p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE htmal>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="sizeView" content="width=device-width">
+		<meta name="description" content="A bank services software">
+		<meta name="keyword" content=" A bank services software">
+		<title>Banka | USER FORM</title>
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+	</head>
+	<body>
+		<header>
+		<div class="container">
+			<div id="brand">
+				<h1>Banka system</h1>
+			</div>
+			<nav>
+				<ul>
+					
+					<li class="current"><a href="account.html">Create account</a></li>
+					<li><a href="accountProf.html">Account profile</a></li>
+					<li><a href="login.html">Logout</a></li>
+				</ul>
+			</nav>
+
+
+		</div>
+		</header>
+		<section id="display">
+			<div class="container2">
+				<form>
+					<h1> CREATE A BANK ACCOUNT</h1>
+					<div  id="feedback"></div>
+					<p>Account number</p>
+					<input type="number"id="AccNum" placeholder="Enter the account number..."  />
+					<p>Date of creation </p>
+					<input type="date"id="date" placeholder="Select the date..."  />
+					<p>Account Owner</p>
+					<input type="text"id="owner" disabled="disabled" />
+
+					<p> Specify the account type</p>
+					<select id="acctype"/>
+					<option value="null">--select the type here--</option>
+					 <option value="saving">Saving account</option>
+					 <option value="current">Current account</option>
+				    </select>
+					
+				    <input type="submit" class="butt" id="createAccount" value="SUBMIT" onclick="counter()"/>
+
+				</form>
+			</div>
+			<script type="text/javascript">
+			function counter(){
+				if(typeof(Storage)!=="undefined"){
+					if (localStorage.clickcount){
+						localStorage.clickcount=Number(localStorage.clickcount)+1;
+					}
+					else{
+						localStorage.clickcount=1;
+					}
+					document.getElementById("feedback").innerHTML=localStorage.clickcount;
+				}
+				else{
+					document.getElementById("feedback").innerHTML="the browser do not support";
+
+				}
+			}
+			</script>
+		</section>
+		
+		<footer>
+			<p>Alexis (alexismajyambere2@gmail.com), copyright &copy; 2019</p>
+		</footer>
+
+	</body>
+</html>
