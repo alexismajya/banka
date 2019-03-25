@@ -148,6 +148,9 @@ form a{
 	padding: 5px;
 	border-radius: 10px;
 }
+#filter,#viewReco,#search{
+	width: 20%;
+}
 #transEntrylegend{
 	width: 30%;
 	float: left;
@@ -217,7 +220,7 @@ table{
 
 }
 th{
-	width: 100px;
+	width: 150px;
 	background-color: black;
 	color: white;
 	overflow: hidden;

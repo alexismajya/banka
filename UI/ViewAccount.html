@@ -5,7 +5,7 @@
 		<meta name="sizeView" content="width=device-width">
 		<meta name="description" content="A bank services software">
 		<meta name="keyword" content=" A bank services software">
-		<title>Banka | Create staff account</title>
+		<title>Banka | Users accounts</title>
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
 	</head>
 	<body>
@@ -17,21 +17,21 @@
 			<nav>
 				<ul>
 					
-					<li class="current"><a href="#">create staff Acc</a></li>
+					<li class="current"><a href="transaction.html">transaction</a></li>
 					<li>
 						<div class="dropdown">
 
-						<a class="dropbtn">MANAGE ACCOUNTS </a>
+						<a class="dropbtn">ACCOUNTS  </a>
 
 					     <div class="dropdown-content">
 					
-							<a href="#">View users accounts</a>
-							<a href="#">Account activation</a>
+							<a href="#">View accounts</a>
+							<a href="#">Activate account</a>
 							<a href="#">Delete account</a>
 						</div>
 						
 					</div> </li>
-
+					
 					<li>
 						<div class="dropdown">
 
@@ -54,52 +54,43 @@
 		<section id="display">
 			<div class="container">
 					
-				<h1> USERS MANAGEMENT</h1>
-				<form id="transEntrylegend" method="POST">
-					<h1> Staff Entry</h1>
+				<form id="view" method="POST">
+					<h1> USERS ACCOUNTS RECORDS</h1>
 
 					<div  id="feedback"></div>
 					
-					<p>Date </p>
-					<input type="date"id="date" placeholder="Select the date..."  />
-					<p> Specify staff type</p>
-					<select id="stafftype"/>
-					<option value="null">--select the type here--</option>
-					 <option value="Admin">Debit/withdraw</option>
-					 <option value="Staff">Credit/Deposit</option>
+					<select id="filter"/>
+					<option value="null">--select  filter--</option>
+					 <option value="debit">All accounts</option>
+					 <option value="credit">Specific account</option>
 				    </select>
-					
-					<p>Staff name</p>
-					<input type="text"id="cashier" />
-										
-					
-				    <input type="submit" class="butt" id="addstaff" value="ADD STAFF"/>
-		
 				
-			    </form>
-			    <form id="transOutpulegend" method="POST">
-			    	<h1> LIST OF Staff</h1>
+					<input type="text"id="search" placeholder="type the key text"  />
+								
+					
+				    <input onclick="" onload="viewRecords()" type="submit" class="butt" id="viewReco" value="Search"/>
+
 			    	<table id="transactTable">
 			    		<thead>
 <th>No</th>
 <th>Date</th>
 <th>Type</th>
 <th>Account</th>
-<th>Casher</th>
-<th>Amount</th>
+<th>Owner</th>
 <th>Balance</th>
+<th>Status</th>
 <th>Action</th>
 			    		</thead>
 			    		<tbody>
 
 			    		</tbody>
 			    	</table>
-					
-					
-					
+		
+				
 			    </form>
+			    
 			</div>
-	
+<script type="text/javascript"></script>
 		</section>
 		
 		<footer>
