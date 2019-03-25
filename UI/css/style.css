@@ -8,13 +8,64 @@ body{
 .container{
 	width: 80%;
 	margin: auto;
-	overflow: hidden;
+	overflow:hidden;
+}
+.containerHeader{
+	width: 80%;
+	margin: auto;
 }
 .container2{
 	width: 40%;
 	margin: auto;
 	overflow: hidden;
 }	
+.dropdown{
+	position: relative;
+	display: inline-block;
+}
+.dropbtn{
+	background-color: black;
+	color: white;
+	padding: 0px;
+	border: none;
+	font-size: 18px;
+	font-family: georgia;
+	cursor: pointer;
+}
+
+.dropdown-content{
+	position: absolute;
+	display: none;
+	background-color: black;
+	min-width: 260px;
+	box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+.dropdown-content a{
+	color: white;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	border-top: 1px;
+	border-bottom: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	border-color: green;
+	border-style: solid;
+	text-transform: capitalize;
+
+}
+.dropdown-content a:hover{
+	background-color: green;
+	color: white;
+}
+.dropdown:hover .dropdown-content{
+	display: block;
+}
+.dropdown:hover .dropbtn{
+	background-color: black;
+	color: green;
+}
 header{
 	background: black;
 	color: green;
@@ -31,7 +82,7 @@ header a{
 }
 header a:hover{
 	color: green;
-	font-weight: bold;
+	font-weight:lighter;
 }
 header .current a{
 	color: green;
@@ -46,6 +97,7 @@ header li{
 	display: inline;
 	padding: 0 20px 0 20px;
 }
+
 header #brand{
 	float: left;
 }
@@ -128,7 +180,7 @@ option{
 	
 	background-color: green;
 	color: white;
-}
+	}
 input.butt{
 	margin-top: 20px;
 	margin-bottom: 20px;
