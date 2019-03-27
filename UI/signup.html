@@ -16,9 +16,9 @@
 			</div>
 			<nav>
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="services.html">services</a></li>
-					<li class="current"><a href="login.html">Login</a></li>
+					<li><a href="index.html">&#127969 Home</a></li>
+					<li class="current"><a href="signup.html">SIGN UP</a></li>
+					<li ><a href="login.html">Login</a></li>
 				</ul>
 			</nav>
 
@@ -30,24 +30,38 @@
 				<form>
 					<h1> SIGN UP FORM</h1>
 					<div  id="feedback"></div>
+					<p>User ID (it will be generated automatically)</p>
+					<input type="number"id="userid" value="" disabled="disabled"  />
 					<p>E-mail address</p>
 					<input type="email"id="email" placeholder="Enter the email address..."  />
 					<p>First Name </p>
 					<input type="text"id="Fname" placeholder="Enter first name..."  />
 					<p>Last Name</p>
-					<input type="text"id="Lname" placeholder="Enter Last Name..."  />		
+					<input type="text"id="Lname" placeholder="Enter Last Name..."  />	
+					<p>User type</p>
+					<input type="text"id="Lname" value="Client" disabled="true" />	
 					<p> Create Password</p>
 					<input type="password"id="Newpassword" placeholder="New password..."  />
 					<p> Confirm Password</p>
 					<input type="password"id="confirm" placeholder="Re-enter password to confirm..."  />
 				    <br>
-				    <input type="button" class="butt" id="signupbutton" value="SUBMIT"/>
+				    <input onclick="signupbuttonClick()" type="button" class="butt" id="signupbutton" value="SUBMIT AND LOGIN"/>
 
 				    <p>Do you have a username? If yes, please <a href="login.html">SIGN IN</a></p>
 				    <br>
 
 				</form>
 			</div>
+
+			<script type="text/javascript">
+			function signupbuttonClick(){
+				var userID=document.getElementById('userid').value;
+				
+					window.location.href="account.html";
+
+	
+			}
+			</script>
 		</section>
 		
 		<footer>

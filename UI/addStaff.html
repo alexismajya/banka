@@ -56,38 +56,48 @@
 					
 				<h1> USERS MANAGEMENT</h1>
 				<form id="transEntrylegend" method="POST">
-					<h1> Staff Entry</h1>
-
+					<h1> ADD STAFF</h1>
 					<div  id="feedback"></div>
-					
-					<p>Date </p>
-					<input type="date"id="date" placeholder="Select the date..."  />
-					<p> Specify staff type</p>
-					<select id="stafftype"/>
-					<option value="null">--select the type here--</option>
-					 <option value="Admin">Debit/withdraw</option>
-					 <option value="Staff">Credit/Deposit</option>
-				    </select>
-					
-					<p>Staff name</p>
-					<input type="text"id="cashier" />
+					<p>User ID (it will be generated automatically)</p>
+					<input type="number"id="userid" value="" disabled="disabled"  />
+					<p>E-mail address</p>
+					<input type="email"id="email" placeholder="Enter the email address..."  />
+					<p>First Name </p>
+					<input type="text"id="fname" placeholder="Enter first name..."  />
+					<p>Last Name</p>
+					<input type="text"id="lname" placeholder="Enter Last Name..."  />
+					<p> Password (To be generated)</p>
+					<input type="password"id="pass" disabled="disabled" placeholder="password..."  />	
+					<p>User type</p>
+					<input type="text"id="type" value="Staff" disabled="true" />	
+
+					<p>Is he/she Admin?</p>
+					<select id="isadmin"/>
+
+					 <option value="false">No</option>
+					 <option value="true">Yes</option>
+					 
+				    </select>	
 										
-					
-				    <input type="submit" class="butt" id="addstaff" value="ADD STAFF"/>
+				    <br>
+				    <input onclick="addStaffRecords()" type="button" class="butt" id="addstaffbtn" value="ADD STAFF"/>
+
+				    <br>
 		
 				
 			    </form>
 			    <form id="transOutpulegend" method="POST">
 			    	<h1> LIST OF Staff</h1>
-			    	<table id="transactTable">
+			    	<table id="UsersTable">
 			    		<thead>
-<th>No</th>
-<th>Date</th>
-<th>Type</th>
-<th>Account</th>
-<th>Casher</th>
-<th>Amount</th>
-<th>Balance</th>
+<th>User Id</th>
+<th>Email</th>
+<th>FName</th>
+<th>LName</th>
+<th>Password</th>
+<th>User type</th>
+<th>IsAdmin</th>
+
 <th>Action</th>
 			    		</thead>
 			    		<tbody>
@@ -99,7 +109,55 @@
 					
 			    </form>
 			</div>
-	
+	<script type="text/javascript">
+	var UserRecordsArrays=[];
+	function addStaffRecords(){
+var id=document.getElementById('userid').value;
+var email=document.getElementById('email').value;	
+var fname=document.getElementById('fname').value;
+var lname=document.getElementById('lname').value;
+var pass=document.getElementById('pass').value;
+var type=document.getElementById('type').value;	
+var isadmin=document.getElementById('isadmin').value;
+var action="";
+
+var UserObject={UserId:id, Email: email, FName:fname, LName: lname, Pass:pass, Type:type, IsAdmin:isadmin};
+
+UserRecordsArrays.push(UserObject);
+localStorage.UserRecords=JSON.stringify(UserRecordsArrays);	
+document.getElementById('feedback').innerHTML="Staff added";
+
+tablecells(id,email,fname,lname,pass,type,isadmin,action);			}
+   function tablecells(cid,cemail,cfname,clname,cpass,ctype,cisadmin,caction){
+	var tab=document.getElementById("UsersTable");
+	var newrow=tab.insertRow();
+
+	newrow.insertCell(0).innerHTML=cid;
+	newrow.insertCell(1).innerHTML=cemail;
+	newrow.insertCell(2).innerHTML=cfname;
+	newrow.insertCell(3).innerHTML=clname;
+	newrow.insertCell(4).innerHTML=cpass;
+	newrow.insertCell(5).innerHTML=ctype;
+	newrow.insertCell(6).innerHTML=cisadmin;
+
+	newrow.insertCell(7).innerHTML='<input type="button" class="buttEdit" value="edit record"/></br> <input onclick="deleteRecord()" type="button" class="buttDel" value="Delete" />'
+function deleteRecord(){
+	var tab=document.getElementById("UsersTable");
+	//var index=tab.rows.selected.rowIndex;
+	//tab.deleteRow("...");
+}
+function viewRecords(){
+	document.getElementById('UsersTable');
+		if(localStorage.UserRecords){
+		UserRecordsArrays=JSON.parse(localStorage.UserRecords);
+	}
+for(var i=0; i<UserRecordsArrays.length;i++){
+	tablecells(UserRecordsArrays[i].UserId,UserRecordsArrays[i].Email,UserRecordsArrays[i].FName,UserRecordsArrays[i].LName,UserRecordsArrays[i].Pass,UserRecordsArrays[i].Type,UserRecordsArrays[i].IsAdmin);
+}
+}
+}
+			</script>
+
 		</section>
 		
 		<footer>
