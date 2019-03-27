@@ -1,0 +1,100 @@
+<!DOCTYPE htmal>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="sizeView" content="width=device-width">
+		<meta name="description" content="A bank services software">
+		<meta name="keyword" content=" A bank services software">
+		<title>Banka | clients accounts</title>
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+	</head>
+	<body>
+		<header>
+		<div class="containerHeader">
+			<div id="brand">
+				<h1>Banka system</h1>
+			</div>
+			<nav>
+				<ul>
+					
+					<li class="current"><a href="transaction.html">transaction</a></li>
+					<li>
+						<div class="dropdown">
+
+						<a class="dropbtn">ACCOUNTS   &#9660 </a>
+
+					     <div class="dropdown-content">
+					
+							<a href="ViewAccount.html">View accounts</a>
+							<a href="#">Activate account</a>
+							<a href="#">Delete account</a>
+						</div>
+						
+					</div> </li>
+					
+					<li>
+						<div class="dropdown">
+
+						<a class="dropbtn">PROFILE    &#9660 </a>
+
+					     <div class="dropdown-content">
+					
+							<a href="#">Logged as:....</a>
+							<a href="#">Change password</a>
+							<a href="login.html">Logout</a>
+						</div>
+						
+					</div> </li>
+				</ul>
+			</nav>
+
+
+		</div>
+		</header>
+		<section id="display">
+			<div class="container">
+					
+				<form id="view" method="POST">
+					<h1> CLIENTS ACCOUNTS RECORDS</h1>
+
+					<div  id="feedback"></div>
+					
+					<select id="filter"/>
+					<option value="null">--select  filter--</option>
+					 <option value="debit">All accounts</option>
+					 <option value="credit">Specific account</option>
+				    </select>
+				
+					<input type="text"id="search" placeholder="type the key text"  />
+								
+					
+				    <input onclick="" onload="viewRecords()" type="submit" class="butt" id="viewReco" value="Search"/>
+
+			    	<table id="transactTable">
+			    		<thead>
+<th>No</th>
+<th>Date</th>
+<th>Type</th>
+<th>Account</th>
+<th>Owner</th>
+<th>Balance</th>
+<th>Status</th>
+<th>Action</th>
+			    		</thead>
+			    		<tbody>
+
+			    		</tbody>
+			    	</table>
+		
+				
+			    </form>
+			    
+			</div>
+<script type="text/javascript"></script>
+		</section>
+		
+		<footer>
+			<p>Alexis (alexismajyambere2@gmail.com), copyright &copy; 2019</p>
+		</footer>
+	</body>
+</html>
