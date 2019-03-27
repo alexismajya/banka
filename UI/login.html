@@ -7,6 +7,7 @@
 		<meta name="keyword" content=" A bank services software">
 		<title>Banka | Login</title>
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<script type="text/javascript" src="./JS/login.js"></script>
 	</head>
 	<body>
 		<header>
@@ -42,32 +43,7 @@
 
 				</form>
 			</div>
-			<script type="text/javascript">
-			function logbuttonClick(){
-				var userID=document.getElementById('username').value;
-				if(userID=="client")
-				{
-					window.location.href="account.html";
-
-				}
-				else if(userID=="Admin")
-				{
-					window.location.href="addStaff.html";
-
-
-				}
-				else if(userID=="Cashier")
-				{
-					//document.getElementById('feedback').innerHTML = "You are cashier";
-					window.location.href="transaction.html";
-
-				}
-				else{
-					document.getElementById('feedback').innerHTML = "Uknown user !!";
-				}
-	
-			}
-			</script>
+			
 		</section>
 		
 		<footer>

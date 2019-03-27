@@ -7,6 +7,7 @@
 		<meta name="keyword" content=" A bank services software">
 		<title>Banka | Transaction</title>
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<script type="text/javascript" src="./JS/transaction.js"></script>
 	</head>
 	<body>
 		<header>
@@ -58,21 +59,24 @@
 				<form id="transEntrylegend" method="POST">
 					<h1> TRANSACTION ENTRY</h1>
 
+					<div  id="feedbackInfo">
+					<p><i class="note"> Dear cashier, the inputs marked with (<i class="required"> * </i>) are mandatory </i></p>
 					<div  id="feedback"></div>
+					</div>
 					
-					<p>Date of transaction </p>
+					<p>Date of transaction <i class="required">*</i></p>
 					<input type="date"id="date" placeholder="Select the date..."  />
-					<p> Specify transaction type</p>
+					<p> Specify transaction type <i class="required">*</i></p>
 					<select id="transtype"/>
 					<option value="null">--select the type here--</option>
 					 <option value="debit">Debit/withdraw</option>
 					 <option value="credit">Credit/Deposit</option>
 				    </select>
-					<p>Account number</p>
+					<p>Account number <i class="required">*</i></p>
 					<input type="number"id="AccNum" placeholder="Enter the account number..."  />
 					<p>Cashier</p>
 					<input type="text"id="cashier" disabled="disabled" />
-					<p>Amount</p>
+					<p>Amount <i class="required">*</i></p>
 					<input type="number" required="required" id="amount" placeholder="Enter the amount..."  />
 
 					
@@ -103,49 +107,7 @@
 					
 			    </form>
 			</div>
-	<script type="text/javascript">
-	var RecordsArrays=[];
-	function saveRecords(){
-var No=null;
-var date=document.getElementById('date').value;	
-var type=document.getElementById('transtype').value;
-var account=document.getElementById('AccNum').value;
-var cashier=document.getElementById('cashier').value;
-var amount=document.getElementById('amount').value;	
-var balance=null;	
-
-var TransObject={NoT:No, dateT: date, typeT:type, accountT: account, cashierT:cashier, amountT:amount, balanceT:balance};
-
-RecordsArrays.push(TransObject);
-localStorage.transactionRecords=JSON.stringify(RecordsArrays);	
-document.getElementById('feedback').innerHTML="Saved";
-
-tablecells(No,date,type,account,cashier,amount,balance);			}
-   function tablecells(No,date,type,account,cashier,amount,balance){
-	var tab=document.getElementById("transactTable");
-	var newrow=tab.insertRow();
-
-	newrow.insertCell(0).innerHTML=No;
-	newrow.insertCell(1).innerHTML=date;
-	newrow.insertCell(2).innerHTML=type;
-	newrow.insertCell(3).innerHTML=account;
-	newrow.insertCell(4).innerHTML=cashier;
-	newrow.insertCell(5).innerHTML=amount;
-	newrow.insertCell(6).innerHTML=balance;
-
 	
-
-function viewRecords(){
-	document.getElementById('transactTable');
-		if(localStorage.transactionRecords){
-		RecordsArrays=JSON.parse(localStorage.transactionRecords);
-	}
-for(var i=0; i<RecordsArrays.length;i++){
-	tablecells(RecordsArrays[i].NoT,RecordsArrays[i].dateT,RecordsArrays[i].typeT,RecordsArrays[i].accountT,RecordsArrays[i].amountT,RecordsArrays[i].balanceT);
-}
-}
-}
-			</script>
 		</section>
 		
 		<footer>

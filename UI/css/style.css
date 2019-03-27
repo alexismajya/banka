@@ -169,7 +169,13 @@ form a{
 	border-left: 0px;
 	background-color: white;
 	min-width: 350px;
-	min-height: 493px;
+	min-height: 543px;
+}
+ i.required{
+	color:red;
+}
+i.note{
+	color:blue;
 }
 
 input,select,option{
@@ -230,13 +236,23 @@ tr{
 	background-color: silver;
 }
 #feedback{
-			width:80%;
+			width:95%;
 			height: auto;
 			font-family:arial,Times, serif;
 			border-radius: 10px;
-			border: solid 1px red;
+			border: solid 1px gray;
 			padding: 10px;
       background-color: white;
+      display: none;
+         
+ }
+ #feedbackInfo{
+			width:80%;
+			min-height: 50px;
+			font-family:arial,Times, serif;
+			
+			border-bottom: solid 1px green;
+			padding: 10px;
       text-align: left;
       margin:auto;
       
@@ -251,10 +267,4 @@ footer{
 	border-top: black 3px solid;
 	margin-bottom: 0px;
 	max-height: 300px;
-}
-.line{
- width: 100%;
- border:1px;
- border-style: solid;
- color: white;
 }
