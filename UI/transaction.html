@@ -7,10 +7,11 @@
 		<meta name="keyword" content=" A bank services software">
 		<title>Banka | Transaction</title>
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<script type="text/javascript" src="./JS/transaction.js"></script>
 	</head>
 	<body>
 		<header>
-		<div class="container">
+		<div class="containerHeader">
 			<div id="brand">
 				<h1>Banka system</h1>
 			</div>
@@ -18,8 +19,33 @@
 				<ul>
 					
 					<li class="current"><a href="transaction.html">transaction</a></li>
-					<li><a href="#">View account</a></li>
-					<li><a href="login.html">Logout</a></li>
+					<li>
+						<div class="dropdown">
+
+						<a class="dropbtn">ACCOUNTS  &#9660  </a>
+
+					     <div class="dropdown-content">
+					
+							<a href="ViewAccount.html">View accounts</a>
+							<a href="#">Activate account</a>
+							<a href="#">Delete account</a>
+						</div>
+						
+					</div> </li>
+					
+					<li>
+						<div class="dropdown">
+
+						<a class="dropbtn">PROFILE  &#9660 </a>
+
+					     <div class="dropdown-content">
+					
+							<a href="#">Logged as:....</a>
+							<a href="#">Change password</a>
+							<a href="login.html">Logout</a>
+						</div>
+						
+					</div> </li>
 				</ul>
 			</nav>
 
@@ -33,21 +59,24 @@
 				<form id="transEntrylegend" method="POST">
 					<h1> TRANSACTION ENTRY</h1>
 
+					<div  id="feedbackInfo">
+					<p><i class="note"> Dear cashier, the inputs marked with (<i class="required"> * </i>) are mandatory </i></p>
 					<div  id="feedback"></div>
+					</div>
 					
-					<p>Date of transaction </p>
+					<p>Date of transaction <i class="required">*</i></p>
 					<input type="date"id="date" placeholder="Select the date..."  />
-					<p> Specify transaction type</p>
+					<p> Specify transaction type <i class="required">*</i></p>
 					<select id="transtype"/>
 					<option value="null">--select the type here--</option>
 					 <option value="debit">Debit/withdraw</option>
 					 <option value="credit">Credit/Deposit</option>
 				    </select>
-					<p>Account number</p>
+					<p>Account number <i class="required">*</i></p>
 					<input type="number"id="AccNum" placeholder="Enter the account number..."  />
 					<p>Cashier</p>
 					<input type="text"id="cashier" disabled="disabled" />
-					<p>Amount</p>
+					<p>Amount <i class="required">*</i></p>
 					<input type="number" required="required" id="amount" placeholder="Enter the amount..."  />
 
 					
@@ -58,7 +87,7 @@
 			    </form>
 			    <form id="transOutpulegend" method="POST">
 			    	<h1> LIST OF TRANSACTIONS</h1>
-			    	<table id="transactTable">
+			    	<table id="transactTable"  >
 			    		<thead>
 <th>No</th>
 <th>Date</th>
@@ -67,7 +96,7 @@
 <th>Casher</th>
 <th>Amount</th>
 <th>Balance</th>
-<th>Action</th>
+
 			    		</thead>
 			    		<tbody>
 
@@ -78,53 +107,7 @@
 					
 			    </form>
 			</div>
-	<script type="text/javascript">
-	var RecordsArrays=[];
-	function saveRecords(){
-var No=null;
-var date=document.getElementById('date').value;	
-var type=document.getElementById('transtype').value;
-var account=document.getElementById('AccNum').value;
-var cashier=document.getElementById('cashier').value;
-var amount=document.getElementById('amount').value;	
-var balance=null;	
-
-var TransObject={NoT:No, dateT: date, typeT:type, accountT: account, cashierT:cashier, amountT:amount, balanceT:balance};
-
-RecordsArrays.push(TransObject);
-localStorage.transactionRecords=JSON.stringify(RecordsArrays);	
-document.getElementById('feedback').innerHTML="Saved";
-
-tablecells(No,date,type,account,cashier,amount,balance);			}
-   function tablecells(No,date,type,account,cashier,amount,balance){
-	var tab=document.getElementById("transactTable");
-	var newrow=tab.insertRow();
-
-	newrow.insertCell(0).innerHTML=No;
-	newrow.insertCell(1).innerHTML=date;
-	newrow.insertCell(2).innerHTML=type;
-	newrow.insertCell(3).innerHTML=account;
-	newrow.insertCell(4).innerHTML=cashier;
-	newrow.insertCell(5).innerHTML=amount;
-	newrow.insertCell(6).innerHTML=balance;
-
-	newrow.insertCell(7).innerHTML='<input type="button" class="buttEdit" value="edit record"/></br> <input onclick="deleteRecord()" type="button" class="buttDel" value="Delete" />'
-function deleteRecord(){
-	var tab=document.getElementById("transactTable");
-	//var index=tab.rows.selected.rowIndex;
-	//tab.deleteRow("...");
-}
-function viewRecords(){
-	document.getElementById('transactTable');
-		if(localStorage.transactionRecords){
-		RecordsArrays=JSON.parse(localStorage.transactionRecords);
-	}
-for(var i=0; i<RecordsArrays.length;i++){
-	tablecells(RecordsArrays[i].NoT,RecordsArrays[i].dateT,RecordsArrays[i].typeT,RecordsArrays[i].accountT,RecordsArrays[i].amountT,RecordsArrays[i].balanceT);
-}
-}
-}
-			</script>
+	
 		</section>
 		
 		<footer>
