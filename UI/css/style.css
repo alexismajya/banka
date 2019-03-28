@@ -148,8 +148,43 @@ form a{
 	padding: 5px;
 	border-radius: 10px;
 }
+fieldset{
+	border:1px;
+	color: blue;
+	text-transform: uppercase;
+	font-style: bold;
+	text-align: left;
+	border-style: solid;
+	min-width: 40%;
+	min-height: 130px;
+	padding: 20px;
+	margin: 10px;
+	border-radius: 10px;
+	background-color: white;
+}
+
+#legendfilter{
+	float: left;
+}
+	
+#legendsearch{
+	float: right;
+	visibility: hidden;
+	
+}
+#formview{
+	min-height: 400px;
+	overflow: hidden;;
+}
+#legendview{
+	float: right;
+	padding: 10px;
+	visibility: hidden;
+	
+}
 #filter,#viewReco,#search{
-	width: 20%;
+	width: 80%;
+
 }
 #transEntrylegend{
 	width: 30%;
@@ -179,16 +214,18 @@ i.note{
 }
 
 input,select,option{
-	padding: 10px;
+	padding: 5px;
 	height: 35px;
 	width: 85%;
 	text-align: left;
 	border-radius: 10px;
 }
+
 option{
 	
 	background-color: green;
 	color: white;
+	line-height: 100px;
 	}
 input.butt{
 	margin-top: 20px;

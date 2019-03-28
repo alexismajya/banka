@@ -5,9 +5,9 @@
 		<meta name="sizeView" content="width=device-width">
 		<meta name="description" content="A bank services software">
 		<meta name="keyword" content=" A bank services software">
-		<title>Banka | clients accounts</title>
+		<title>Banka | Transaction history</title>
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
-		<script type="text/javascript" src="./JS/ViewAccount.js"></script>
+		<script type="text/javascript" src="./JS/accountHistory.js"></script>
 	</head>
 	<body>
 		<header>
@@ -18,22 +18,9 @@
 			<nav>
 				<ul>
 					
-					<li class="current"><a href="transaction.html">transaction</a></li>
-					<li>
-						<div class="dropdown">
+					<li ><a href="account.html">Create account</a></li>
+					<li class="current"><a href="accountHistory.html">View transactions</a></li>
 
-						<a class="dropbtn">ACCOUNTS   &#9660 </a>
-
-					     <div class="dropdown-content">
-					
-							<a href="ViewAccount.html">View accounts</a>
-							<a href="#">Activate account</a>
-							<a href="#">Delete account</a>
-							
-						</div>
-						
-					</div> </li>
-					
 					<li>
 						<div class="dropdown">
 
@@ -57,25 +44,27 @@
 			<div class="container">
 					
 				<form id="formview" method="POST">
-					<h1> CLIENTS ACCOUNTS RECORDS</h1>
+					<h1> ACCOUNT TRANSACTION HISTORY</h1>
 
 					<div  id="feedback"></div>
 					<div>
 					<fieldset id="legendfilter">
-						<legend> search filter</legend>
+						<legend> search filter for : <label> account here</label></legend>
+
+
 					<select id="filter" onchange="onselectValue()">
 					
 				
 					<option value="null">--select the option here--</option>
-					<option value="one">Specific account</option>
-					 <option value="all">All accounts</option>
+					<option value="one">Specific transaction</option>
+					 <option value="all">Full account history</option>
 					 
 				    </select>
 				</fieldset>
 				
 				<fieldset id ="legendsearch">
 					<legend> search area</legend>
-					<input  type="number"id="search" placeholder="account number or user id "  />
+					<input  type="date"id="search" placeholder="select the date "  />
 								
 					
 				    <input onclick="viewRecords()" type="button" class="butt" id="viewReco" value="Search"/>
@@ -87,7 +76,7 @@
 
 				    <div>
 				    	<fieldset id="legendview">
-				    		<legend> View of accounts</legend>
+				    		<legend> View of transactions for : <label> account here</label></legend>
 
 			    	<table id="ViewTable">
 			    		<thead>
