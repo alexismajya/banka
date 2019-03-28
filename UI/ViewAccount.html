@@ -28,6 +28,7 @@
 							<a href="ViewAccount.html">View accounts</a>
 							<a href="#">Activate account</a>
 							<a href="#">Delete account</a>
+							
 						</div>
 						
 					</div> </li>
@@ -59,13 +60,13 @@
 
 					<div  id="feedback"></div>
 					
-					<select id="filter"/>
+					<select id="filter" onload="dropdownlistSelect()">
 					<option value="null">--select  filter--</option>
-					 <option value="debit">All accounts</option>
-					 <option value="credit">Specific account</option>
+					 <option value="all">All accounts</option>
+					 <option value="one">Specific account</option>
 				    </select>
 				
-					<input type="text"id="search" placeholder="type the key text"  />
+					<input onkeypress="dropdownlistSelect()" type="text"id="search" placeholder="type the key text"  />
 								
 					
 				    <input onclick="" onload="viewRecords()" type="submit" class="butt" id="viewReco" value="Search"/>

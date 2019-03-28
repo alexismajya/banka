@@ -74,7 +74,7 @@ header{
 	border-bottom: green 3px solid;
 
 }
-header a{
+ a{
 	color: white;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -92,7 +92,7 @@ ul{
 	padding: 0;
 	margin:0;
 }
-header li{
+ li{
 	float: left;
 	display: inline;
 	padding: 0 20px 0 20px;
@@ -257,6 +257,15 @@ tr{
       margin:auto;
       
  }
+  footer #footerlinks{
+			width:80%;
+			min-height: 50px;
+			font-family:arial,Times, serif;
+			
+			border-bottom: solid 1px black;
+           float: center;
+      
+ }
 footer{
 	background: green;
 	color: white;
@@ -267,4 +276,5 @@ footer{
 	border-top: black 3px solid;
 	margin-bottom: 0px;
 	max-height: 300px;
+
 }
