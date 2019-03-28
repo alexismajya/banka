@@ -1,0 +1,124 @@
+`<!DOCTYPE htmal>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="sizeView" content="width=device-width">
+		<meta name="description" content="A bank services software">
+		<meta name="keyword" content=" A bank services software">
+		<title>Banka | Create staff account</title>
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<script type="text/javascript" src="./JS/addStaff.js"></script>
+	</head>
+	<body>
+		<header>
+		<div class="containerHeader">
+			<div id="brand">
+				<h1>Banka system</h1>
+			</div>
+			<nav>
+				<ul>
+					
+					<li class="current"><a href="#">create staff Acc</a></li>
+					<li>
+						<div class="dropdown">
+
+						<a class="dropbtn">MANAGE ACCOUNTS  &#9660 </a>
+
+					     <div class="dropdown-content">
+					
+							<a href="ViewAccount.html">View users accounts</a>
+							<a href="#">Account activation</a>
+							<a href="#">Delete account</a>
+						</div>
+						
+					</div> </li>
+
+					<li>
+						<div class="dropdown">
+
+						<a class="dropbtn">PROFILE  &#9660 </a>
+
+					     <div class="dropdown-content">
+					
+							<a href="#">Logged as:....</a>
+							<a href="#">Change password</a>
+							<a href="login.html">Logout</a>
+						</div>
+						
+					</div> </li>
+				</ul>
+			</nav>
+
+
+		</div>
+		</header>
+		<section id="display">
+			<div class="container">
+					
+				<h1> USERS MANAGEMENT</h1>
+				<form id="transEntrylegend" method="POST">
+					<h1> ADD STAFF</h1>
+					<div  id="feedbackInfo">
+					<p><i class="note"> Dear staff, the inputs marked with (<i class="required"> * </i>) are mandatory </i></p>
+					<div  id="feedback"></div>
+					</div>
+					<p>User ID (it will be generated automatically)</p>
+					<input type="number"id="userid" value="" disabled="disabled"  />
+					<p>E-mail address <i class="required">*</i></p>
+					<input type="email"id="email" placeholder="Enter the email address..."  />
+					<p>First Name <i class="required">*</i></p>
+					<input type="text"id="fname" placeholder="Enter first name..."  />
+					<p>Last Name <i class="required">*</i></p>
+					<input type="text"id="lname" placeholder="Enter Last Name..."  />
+					<p> Password (To be generated)</p>
+					<input type="password"id="pass" disabled="disabled" placeholder="password..."  />	
+					<p>User type </p>
+					<input type="text"id="type" value="Staff" disabled="true" />	
+
+					<p>Is he/she Admin?</p>
+					<select id="isadmin"/>
+
+					 <option value="false">No</option>
+					 <option value="true">Yes</option>
+					 
+				    </select>	
+										
+				    <br>
+				    <input onclick="addStaffRecords()" type="button" class="butt" id="addstaffbtn" value="ADD STAFF"/>
+
+				    <br>
+		
+				
+			    </form>
+			    <form id="transOutpulegend" method="POST">
+			    	<h1> LIST OF Staff</h1>
+			    	<table id="UsersTable">
+			    		<thead>
+<th>User Id</th>
+<th>Email</th>
+<th>FName</th>
+<th>LName</th>
+<th>Password</th>
+<th>User type</th>
+<th>IsAdmin</th>
+
+<th>Action</th>
+			    		</thead>
+			    		<tbody>
+
+			    		</tbody>
+			    	</table>
+					
+					
+					
+			    </form>
+			</div>
+	
+
+		</section>
+		
+		<footer>
+			<p>Alexis (alexismajyambere2@gmail.com), copyright &copy; 2019</p>
+		</footer>
+	</body>
+</html>
