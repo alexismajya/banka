@@ -135,6 +135,15 @@ form h1{
 	font-size: 18px;
 	text-transform: capitalize;
 }
+h2{
+	float: left;
+	color: black;
+	background-color: white;
+	margin-top: 10px;
+	height: 25px;
+	font-size: 22px;
+	text-transform: none;
+}
 form p{
 	
 	height: 15px;
@@ -143,6 +152,14 @@ form p{
 	
 	margin-bottom: 4px;
 	
+}
+.homeP{
+	
+	text-align: left;
+	font-size: 18px;
+
+	margin-top: 35px;
+	margin-bottom: 4px;
 }
 form a{
 	color: white;
