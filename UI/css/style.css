@@ -5,8 +5,11 @@ body{
 	margin: 0;
 	background-color: white;
 }
+.homelink{
+	color: blue;
+}
 .container{
-	width: 80%;
+	width: 100%;
 	margin: auto;
 	overflow:hidden;
 }
@@ -15,7 +18,7 @@ body{
 	margin: auto;
 }
 .container2{
-	width: 40%;
+	width: 80%;
 	margin: auto;
 	overflow: hidden;
 }	
@@ -74,7 +77,7 @@ header{
 	border-bottom: green 3px solid;
 
 }
-header a{
+ a{
 	color: white;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -92,7 +95,7 @@ ul{
 	padding: 0;
 	margin:0;
 }
-header li{
+ li{
 	float: left;
 	display: inline;
 	padding: 0 20px 0 20px;
@@ -114,13 +117,16 @@ header nav{
 
 }
 form{
+	width: 50%;
 	float: center;
 	margin-top: 20px;
-
+	margin-bottom: 30px;
+    margin-left: 220px;
 	border-style: solid;
 	border-color: green;
 	border-radius: 15px;
 	background-color: silver;
+	box-shadow: 5px 0px 100px 0px  green;
 	
 }
 form h1{
@@ -132,6 +138,15 @@ form h1{
 	font-size: 18px;
 	text-transform: capitalize;
 }
+h2{
+	float: left;
+	color: black;
+	background-color: white;
+	margin-top: 10px;
+	height: auto;
+	font-size: 22px;
+	text-transform: none;
+}
 form p{
 	
 	height: 15px;
@@ -141,6 +156,14 @@ form p{
 	margin-bottom: 4px;
 	
 }
+.homeP{
+	
+	text-align: left;
+	font-size: 18px;
+
+	margin-top: 35px;
+	margin-bottom: 4px;
+}
 form a{
 	color: white;
 	background-color: green;
@@ -148,22 +171,62 @@ form a{
 	padding: 5px;
 	border-radius: 10px;
 }
+fieldset{
+	border:1px;
+	color: blue;
+	text-transform: uppercase;
+	font-style: bold;
+	text-align: left;
+	border-style: solid;
+	min-width: 40%;
+	min-height: 130px;
+	padding: 20px;
+	margin: 10px;
+	border-radius: 10px;
+	background-color: white;
+}
+
+#legendfilter{
+	float: left;
+}
+	
+#legendsearch{
+	float: right;
+	visibility: hidden;
+	
+}
+#formview{
+	min-height: 400px;
+	overflow: hidden;
+	width: 80%;
+	margin-left: 120px;
+}
+#legendview{
+	float: right;
+	padding: 10px;
+	visibility: hidden;
+	
+}
 #filter,#viewReco,#search{
-	width: 20%;
+	width: 80%;
+
 }
 #transEntrylegend{
-	width: 30%;
+	width: 29%;
 	float: left;
+	border-right:0px;
 	border-bottom-right-radius: 0;
 	border-top-right-radius: 0;
-	min-width: 250px;
+	margin-left: 9px;
 }
 #transEntrylegend p{
 	padding-left: 25px;
 }
 #transOutpulegend{
-	width: 69%;
+	width:68%;
 	float: right;
+	margin-left:0px;
+	margin-right:9px;
 	border-bottom-left-radius: 0;
 	border-top-left-radius: 0;
 	border-left: 0px;
@@ -179,16 +242,18 @@ i.note{
 }
 
 input,select,option{
-	padding: 10px;
+	padding: 5px;
 	height: 35px;
 	width: 85%;
 	text-align: left;
 	border-radius: 10px;
 }
+
 option{
 	
 	background-color: green;
 	color: white;
+	line-height: 100px;
 	}
 input.butt{
 	margin-top: 20px;
@@ -236,14 +301,15 @@ tr{
 	background-color: silver;
 }
 #feedback{
-			width:95%;
+			width:80%;
+			margin-left: 40px;
 			height: auto;
-			font-family:arial,Times, serif;
 			border-radius: 10px;
-			border: solid 1px gray;
+			border: solid 1px green;
 			padding: 10px;
-      background-color: white;
-      display: none;
+            background-color: white;
+            visibility: hidden;
+            color: green;
          
  }
  #feedbackInfo{
@@ -257,6 +323,15 @@ tr{
       margin:auto;
       
  }
+  footer #footerlinks{
+			width:80%;
+			min-height: 50px;
+			font-family:arial,Times, serif;
+			
+			border-bottom: solid 1px black;
+           float: center;
+      
+ }
 footer{
 	background: green;
 	color: white;
@@ -267,4 +342,5 @@ footer{
 	border-top: black 3px solid;
 	margin-bottom: 0px;
 	max-height: 300px;
+
 }

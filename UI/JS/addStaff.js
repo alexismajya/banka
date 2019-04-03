@@ -30,6 +30,8 @@ tablecells(id,email,fname,lname,pass,type,isadmin,action);			}
 	newrow.insertCell(6).innerHTML=cisadmin;
 
 	newrow.insertCell(7).innerHTML='<input type="button" class="buttEdit" value="edit record"/></br> <input onclick="deleteRecord()" type="button" class="buttDel" value="Delete" />'
+
+}
 function deleteRecord(){
 	var tab=document.getElementById("UsersTable");
 	//var index=tab.rows.selected.rowIndex;
@@ -42,6 +44,5 @@ function viewRecords(){
 	}
 for(var i=0; i<UserRecordsArrays.length;i++){
 	tablecells(UserRecordsArrays[i].UserId,UserRecordsArrays[i].Email,UserRecordsArrays[i].FName,UserRecordsArrays[i].LName,UserRecordsArrays[i].Pass,UserRecordsArrays[i].Type,UserRecordsArrays[i].IsAdmin);
-}
 }
 }
