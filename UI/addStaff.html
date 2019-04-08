@@ -9,50 +9,52 @@
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
 		<link rel="stylesheet" type="text/css" media="screen and (max-width:768px)" href="./css/SmalStyle.css">
 		<link rel="stylesheet" type="text/css" media="screen and (min-width:769px) and (max-width:992px)" href="./css/MediumStyle.css">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/Navigate.css">
 		<script type="text/javascript" src="./JS/addStaff.js"></script>
 	</head>
 	<body>
 		<header>
-		<div class="containerHeader">
-			<div id="brand">
-				<h1>Banka system</h1>
+			<div>
+			  <h1>banka system</h1>
+			  
 			</div>
-			<nav>
+			<div class="topnav" id="myTopnav">
+			
 				<ul>
-					
-					<li class="current"><a href="#">create staff Acc</a></li>
-					<li>
-						<div class="dropdown">
-
-						<a class="dropbtn">MANAGE ACCOUNTS  &#9660 </a>
-
-					     <div class="dropdown-content">
-					
-							<a href="ViewAccount.html">View users accounts</a>
-							<a href="#">Account activation</a>
-							<a href="#">Delete account</a>
-						</div>
+					<li id="current"><a class="active" href="#">create staff Acc</a></li>
+					<li><a >MANAGE ACCOUNTS  <label class="pointerdown"> &#9660 </label> <label class="pointerright"> &#9654 </label></a>
 						
-					</div> </li>
-
-					<li>
-						<div class="dropdown">
-
-						<a class="dropbtn">PROFILE  &#9660 </a>
-
-					     <div class="dropdown-content">
+						<ul>
+						    
 					
-							<a href="#">Logged as:....</a>
-							<a href="#">Change password</a>
-							<a href="login.html">Logout</a>
-						</div>
+							<li><a href="ViewAccount.html">View users accounts</a></li>
+							<li><a href="#">Account activation</a></li>
+							<li><a href="#">Delete account</a></li>
+						</ul>
 						
-					</div> </li>
+						
+					 </li>
+
+					 <li id="drop"><a>PROFILE <label class="pointerdown"> &#9660 </label> <label class="pointerright"> &#9654 </label> </a>
+					 	
+						 <ul>
+
+							<li><a href="#">Logged as:....</a></li>
+							<li><a href="#">Change password</a></li>
+							<li><a href="login.html">Logout</a></li>
+							
+						
+						 </ul> 
+
+					 </li>
+					 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+					    &#x2630 </a>
+
 				</ul>
-			</nav>
 
-
-		</div>
+		    </div>
 		</header>
 		<section id="display">
 			<div class="container">
@@ -96,15 +98,15 @@
 			    	<h1> LIST OF Staff</h1>
 			    	<table id="UsersTable">
 			    		<thead>
-<th>User Id</th>
-<th>Email</th>
-<th>FName</th>
-<th>LName</th>
-<th>Password</th>
-<th>User type</th>
-<th>IsAdmin</th>
+							<th>User Id</th>
+							<th>Email</th>
+							<th>FName</th>
+							<th>LName</th>
+							<th>Password</th>
+							<th>User type</th>
+							<th>IsAdmin</th>
 
-<th>Action</th>
+							<th>Action</th>
 			    		</thead>
 			    		<tbody>
 
@@ -118,6 +120,17 @@
 	
 
 		</section>
+
+		<script>
+			function myFunction() {
+				 var x = document.getElementById("myTopnav");
+				  if (x.className === "topnav") {
+				    x.className += " responsive";
+				  } else {
+				    x.className = "topnav";
+				  }
+			}
+		</script>
 		
 		<footer>
 			<p>Alexis (alexismajyambere2@gmail.com), copyright &copy; 2019</p>
