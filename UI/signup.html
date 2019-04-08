@@ -11,26 +11,29 @@
 		<link rel="stylesheet" type="text/css" media="screen and (min-width:769px) and (max-width:992px)" href="./css/MediumStyle.css">
 
 		<script type="text/javascript" src="./JS/signup.js"></script>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/Navigate.css">
 	</head>
 	<body>
 		<header>
-		<div class="container">
-			<div id="brand">
-				<h1>Banka system</h1>
+			<div >
+			  <h1>banka system</h1>
+			  
 			</div>
-			<nav>
+			
+			<div class="topnav" id="myTopnav">
+				
 				<ul>
+					<li><a href="file:///C:/Users/user/Banka/index.html"> Home</a></li>
+					<li ><a  href="login.html">Services</a></li>
+					<li id="current"><a class="active" href="signup.html"> SIGN UP</a></li>
 
-
-					<li><a href="file:///C:/Users/user/Banka/index.html">&#127969 Home</a></li>
-
-					<li class="current"><a href="signup.html">SIGN UP</a></li>
 					<li ><a href="login.html">Login</a></li>
-				</ul>
-			</nav>
-
-
-		</div>
+				    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+					    &#x2630</a>
+			    </ul>
+			</div>
 		</header>
 		<section id="display2">
 			<div class="container2">
@@ -57,13 +60,23 @@
 				    <br>
 				    <input onclick="signupbuttonClick()" type="button" class="butt" id="signupbutton" value="SUBMIT AND LOGIN"/>
 
-				    <p>Do you have a username? If yes, please <a href="login.html">SIGN IN</a></p>
+				    <p>Do you have a username?  please <a href="login.html">SIGN IN</a></p>
 				    <br>
 
 				</form>
 			</div>
 
 		</section>
+		<script>
+				function myFunction() {
+				  var x = document.getElementById("myTopnav");
+				  if (x.className === "topnav") {
+				    x.className += " responsive";
+				  } else {
+				    x.className = "topnav";
+				  }
+				}
+		</script>
 		
 		<footer>
 			<p>Alexis (alexismajyambere2@gmail.com), copyright &copy; 2019</p>

@@ -21,19 +21,12 @@ header #brand h1{
 	margin-left: 0px;
 	padding: 10px;
 }
- a{
-
-	font-size: 16px;
-}
 
  li{
 
 	padding: 0 15px 0 15px;
 }
 
-.dropbtn{
-	font-size: 14px;
-}
 
 .dropdown-content{
 	margin-left: -100px;
@@ -88,7 +81,6 @@ fieldset{
 	padding: 10px;
 	margin: 10px;
 	border-radius: 10px;
-	font-size: 12px;
 }
 
 form{
@@ -107,19 +99,10 @@ form{
 	width: 100%;
 	margin-left: 0px;
 }
-form h1{
-	height: 25px;
-	font-size: 16px;
-}
-h2{
-	height: auto;
-	font-size: 16px;
-}
 
 .homeP{
 	
 	text-align: left;
-	font-size: 16px;
     margin: 10px;
 	margin-top: 70px;
 	margin-bottom: 4px;
@@ -127,8 +110,6 @@ h2{
 .homeh2{
 	margin: 10px;
 }
-.homeh1{
-	font-size: 18px;
-}
+
 
 
