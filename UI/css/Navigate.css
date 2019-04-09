@@ -100,7 +100,8 @@ text-transform: capitalize;
 .topnav .icon {
   display: none;
   color: white;
-  margin-right: 15px;
+  margin-right: 30px;
+  font-size: 35px;
 }
 
 @media screen and (max-width: 720px) {
@@ -108,16 +109,18 @@ text-transform: capitalize;
   .topnav a:not(:first-child) {
     display: none;
   }
+  .topnav li {
+    display: none;
+    width: 240px; 
+   text-align: left;
+  }
   .topnav a.icon {
     float: right;
     display: block;
   }
-  .topnav.responsive {
-    width: 100%;
-    position: absolute;
-  }
+    
   .topnav.responsive li {
-   
+   width: 220px;
     border-top: solid 1px green;
    
   }
@@ -125,6 +128,12 @@ text-transform: capitalize;
     position: absolute;
     right: 0;
     top: 0;
+  
+  }
+  .topnav.responsive {  
+    position: absolute;
+    width: 240px; 
+   
   }
   .topnav.responsive a {
     float: none;
@@ -145,7 +154,7 @@ text-transform: capitalize;
   }
   .topnav li {
     display: none;
-    width: 210px;
+    width: 380px;
    text-align: left;
   }
   .topnav a.icon {
@@ -153,14 +162,14 @@ text-transform: capitalize;
     display: block;
   }
   .topnav.responsive {
-    width: 290px;   
+    width: 480px;   
     position: absolute;
 
    
   }
   .topnav.responsive li {
     display: block;
-    height: 15px;
+    height: 30px;
     border-top: solid 1px green;
    
   }
@@ -198,8 +207,8 @@ text-transform: capitalize;
 
 }
 .topnav ul li ul{
- margin-left: 94%;
- margin-top: -45px;
+ margin-left: 97%;
+ margin-top: -60px;
 }
 .topnav ul li ul li{
  background-color: #4CAF50;
