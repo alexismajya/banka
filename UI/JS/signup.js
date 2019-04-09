@@ -2,8 +2,8 @@
 			function signupbuttonClick(){
 				//var userID=document.getElementById('userid').value;
 				
-				returnLastUserID();
-        //window.location.href="account.html";
+				//returnLastUserID();
+        window.location.href="account.html";
 
 					//window.location.href="account.html";
 
