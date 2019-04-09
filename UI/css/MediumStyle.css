@@ -1,11 +1,11 @@
 .container{
-	width: 85%;
+	width: 100%;
 	height: auto;
 }
 header{
 
 	padding-top: 20px;
-	min-height: 100px;
+	min-height: 145px;
 
 }
 .containerHeader{
@@ -13,7 +13,7 @@ header{
 }
 .container2{
 
-	width: 80%;
+	width: 100%;
 	height: auto;
 }	
 
@@ -80,14 +80,11 @@ form,.contHomeleft,.contHomeright{
 	border-radius: 10px;
 	margin-left: 60px;
 }
-form p{
-	
-	margin-left: 70px;
-}
+
 input,select,option{
 	padding: 5px;
-	height: 40px;
-	width: 70%;
+	height: 45px;
+	width: 90%;
 }
 #formview{
 	min-height: 400px;
