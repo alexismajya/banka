@@ -1,5 +1,5 @@
 .container{
-	width: 80%;
+	width: 85%;
 	height: auto;
 }
 header{
@@ -27,18 +27,6 @@ header #brand h1{
 	padding: 0 15px 0 15px;
 }
 
-
-.dropdown-content{
-	margin-left: -100px;
-	margin-right: 0px;
-	min-width: 200px;
-	float: right;
-}
-.dropdown-content a{
-	padding: 12px 16px;
-	text-transform: capitalize;
-
-}
 #transEntrylegend{
 	width: 100%;
 	float: center;
@@ -54,17 +42,20 @@ header #brand h1{
 	border: 0px;
 }
 #legendfilter{
-	float: center;
+	float: left;
+	width: 50%;
 }
 	
 #legendsearch{
-	float: center;	
+	float: left;	
+	width: 50%;
 }
 #formview{
 	height: 100%;
 	height: auto;
 }
 #legendview{
+	width: 95%;
 	float: center;
 	padding: 10px;
 	height: auto;
@@ -83,15 +74,20 @@ fieldset{
 	border-radius: 10px;
 }
 
-form{
+form,.contHomeleft,.contHomeright{
 
-	width: 70%;
+	width: 85%;
 	border-radius: 10px;
-	box-shadow: 5px 0px 100px 0px  green;
-	margin-left: 100px;
-
-
+	margin-left: 60px;
+}
+form p{
 	
+	margin-left: 70px;
+}
+input,select,option{
+	padding: 5px;
+	height: 40px;
+	width: 70%;
 }
 #formview{
 	min-height: 400px;
