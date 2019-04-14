@@ -19,3 +19,11 @@ function viewRecords(){
 	document.getElementById('legendview').style.visibility="visible";
 
 }
+function myFunction() {
+				 var x = document.getElementById("myTopnav");
+				  if (x.className === "topnav") {
+				    x.className += " responsive";
+				  } else {
+				    x.className = "topnav";
+				  }
+			}

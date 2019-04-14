@@ -46,3 +46,12 @@ for(var i=0; i<UserRecordsArrays.length;i++){
 	tablecells(UserRecordsArrays[i].UserId,UserRecordsArrays[i].Email,UserRecordsArrays[i].FName,UserRecordsArrays[i].LName,UserRecordsArrays[i].Pass,UserRecordsArrays[i].Type,UserRecordsArrays[i].IsAdmin);
 }
 }
+
+function myFunction() {
+				 var x = document.getElementById("myTopnav");
+				  if (x.className === "topnav") {
+				    x.className += " responsive";
+				  } else {
+				    x.className = "topnav";
+				  }
+			}

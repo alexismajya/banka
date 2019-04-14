@@ -41,3 +41,11 @@ function tablecells(No,date,type,account,cashier,amount,balance){
 	newrow.insertCell(6).innerHTML=balance;
 	newrow.insertCell(7).innerHTML='<input type="button" class="buttEdit" value="Activate"/></br> <input onclick="deleteRecord()" type="button" class="buttDel" value="Delete" />';
 }
+function myFunction() {
+	var x = document.getElementById("myTopnav");
+		if (x.className === "topnav") {
+			 x.className += " responsive";
+		} else {
+			   x.className = "topnav";
+		}
+}
