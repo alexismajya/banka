@@ -6,9 +6,9 @@ const bcrypt = require('bcrypt');
 //The following are sign up APIs (signup, finduser, returnallusers)
 
 module.exports = {
-    //getUsers: (req, res) => {
-      //   res.status(200).send(data.info_users);
-   // },
+    getUsers: (req, res) => {
+        res.status(200).send(data.info_users);
+   },
 
 
     signUp: (req, res) => {
@@ -43,11 +43,11 @@ module.exports = {
         }
     },
 
-    getUsers:() =>{
-        return data.info_users.map(u => {
-        const { password, ...userWithoutPassword } = u;
-        return userWithoutPassword;
-        });
-    }
+    //getUsers:() =>{
+        //return data.info_users.map(u => {
+        //const { password, ...userWithoutPassword } = u;
+        //return userWithoutPassword;
+       // });
+    //}
     
 }

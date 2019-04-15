@@ -2,7 +2,7 @@ var express = require('express');
 var userSignUpRouter = express.Router();
 
 
-const {signUp, getUsers,findUser} = require('../controllers/user.signup');
+const {getUsers,signUp, findUser} = require('../controllers/user.signup');
 
 // the banka User sinup APIs
 userSignUpRouter.get('/api/v1/info_users', getUsers);

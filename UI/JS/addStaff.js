@@ -1,22 +1,20 @@
 
 	var UserRecordsArrays=[];
 	function addStaffRecords(){
-var id=document.getElementById('userid').value;
 var email=document.getElementById('email').value;	
 var fname=document.getElementById('fname').value;
 var lname=document.getElementById('lname').value;
 var pass=document.getElementById('pass').value;
-var type=document.getElementById('type').value;	
 var isadmin=document.getElementById('isadmin').value;
 var action="";
 
-var UserObject={UserId:id, Email: email, FName:fname, LName: lname, Pass:pass, Type:type, IsAdmin:isadmin};
+var UserObject={UserId:'', Email: email, FName:fname, LName: lname, Pass:pass, Type:"Staff", IsAdmin:isadmin};
 
 UserRecordsArrays.push(UserObject);
 localStorage.UserRecords=JSON.stringify(UserRecordsArrays);	
 document.getElementById('feedback').innerHTML="Staff added";
 
-tablecells(id,email,fname,lname,pass,type,isadmin,action);			}
+tablecells('',email,fname,lname,pass,'Staff',isadmin,action);			}
    function tablecells(cid,cemail,cfname,clname,cpass,ctype,cisadmin,caction){
 	var tab=document.getElementById("UsersTable");
 	var newrow=tab.insertRow();
