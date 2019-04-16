@@ -1,6 +1,6 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const loggeduser = require('./user.signup');
+import loggeduser from'./user.signup';
 
 function signIn(req, res, next) {
     loggeduser.findUser(req.body)
@@ -8,8 +8,3 @@ function signIn(req, res, next) {
         .catch(err => next(err));
 }
 
-function viewUsers(req, res, next) {
-    loggeduser.getUsers()
-        .then(info_users => res.json(info_users))
-        .catch(err => next(err));
-}
