@@ -1,23 +1,22 @@
-const config = require('../config/config.json');
-const myTok = require('jsonwebtoken');
-const data = require('../models/info_users');
-const bcrypt = require('bcrypt');
-
-//The following are sign up APIs (signup, finduser, returnallusers)
+import config from'../config/config.json';
+import myTok from 'jsonwebtoken';
+import info_users from'../models/info_users';
+import bcrypt from'bcrypt';
 
 module.exports = {
     getUsers: (req, res) => {
-        res.status(200).send(data.info_users);
+        res.status(200).send(info_users);
    },
 
 
     signUp: (req, res) => {
-        if (!req.body.firstName || req.body.firstName.length <2 || !req.body.email ||!req.body.password)
-            return res.status(400).send('Names, password and email are required');
+        console.log(req.body.lastName);
+        if (!req.body.lastName)
+            return res.status(400).send('Names required');
 
     else{
         const userData = {
-        id:data.info_users.length +1,
+        id:info_users.length +1,
         email: req.body.email,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -26,13 +25,13 @@ module.exports = {
         isAdmin:req.body.isAdmin, 
         token:myTok.sign({ sub: user.id }, config.secret)
     };
-     data.info_users.push(userData);
-     res.status(200).json({status:200, data: userData});
+     info_users.push(userData);
+     res.status(200).json({status:200, info_users: userData});
     }
     },
 
     findUser:({ email, pass }) =>{
-    const user = data.info_users.find(u => u.email === email && u.password === pass);
+    const user = info_users.find(u => u.email === email && u.password === pass);
         if (user) {
         const token = myTok.sign({ sub: user.id }, config.secret);
             const { password, ...userWithoutPassword } = user;

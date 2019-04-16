@@ -146,6 +146,7 @@ fieldset{
 #legendsearch{
 	float: right;
 	visibility: hidden;
+	padding-top: 10px;
 	
 }
 #formview{
