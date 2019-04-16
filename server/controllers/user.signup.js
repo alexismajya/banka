@@ -10,8 +10,8 @@ module.exports = {
 
 
     signUp: (req, res) => {
-        if (!req.body.lastName){
-            return res.status(400).json('Names required');
+        if (!req.body.lastName || !req.body.email || !req.body.password){
+            return res.status(400).json('Fill out all required fields');
         }
 
     else{
@@ -23,10 +23,10 @@ module.exports = {
         password: bcrypt.hashSync(req.body.password,10),
         type:req.body.type, 
         isAdmin:req.body.isAdmin, 
-        token:myTok.sign({ sub: userData.id }, config.secret)
+        //token:myTok.sign({ sub: userData.id }, config.secret)
     };
      info_users.push(userData);
-     res.status(200).json({status:200, info_users: userData});
+     res.status(200).json({status:200, data: userData});
     }
     },
 
@@ -41,12 +41,5 @@ module.exports = {
             };
         }
     },
-
-    //getUsers:() =>{
-        //return data.info_users.map(u => {
-        //const { password, ...userWithoutPassword } = u;
-        //return userWithoutPassword;
-       // });
-    //}
     
 }
