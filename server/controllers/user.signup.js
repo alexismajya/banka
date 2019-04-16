@@ -10,9 +10,9 @@ module.exports = {
 
 
     signUp: (req, res) => {
-        console.log(req.body.lastName);
-        if (!req.body.lastName)
-            return res.status(400).send('Names required');
+        if (!req.body.lastName){
+            return res.status(400).json('Names required');
+        }
 
     else{
         const userData = {
@@ -23,7 +23,7 @@ module.exports = {
         password: bcrypt.hashSync(req.body.password,10),
         type:req.body.type, 
         isAdmin:req.body.isAdmin, 
-        token:myTok.sign({ sub: user.id }, config.secret)
+        token:myTok.sign({ sub: userData.id }, config.secret)
     };
      info_users.push(userData);
      res.status(200).json({status:200, info_users: userData});
