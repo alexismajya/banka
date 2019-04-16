@@ -4,21 +4,12 @@
 			var userID=document.getElementById('username').value;
 			var pass=document.getElementById('password').value;
 			
-
 				document.getElementById('feedback').style.visibility="visible";
 
 
-				//if(userID!="" && pass!=""){
-
-					//if(returnUserRecords(userID,pass)=="client")
-					//{
-					//	window.location.href="account.html";
-
-					//}
-
 					if (userID=="client")
 					{
-						window.location.href="account.html";
+						window.location.href="accountHistory.html";
 					}
 					else if(userID=="Admin")
 					{
@@ -28,7 +19,6 @@
 					}
 					else if(userID=="Staff")
 					{
-						//document.getElementById('feedback').innerHTML = "You are cashier";
 						window.location.href="transaction.html";
 
 					}
@@ -36,15 +26,13 @@
 						document.getElementById('feedback').innerHTML = "Uknown user !!"+returnUserRecords(userID,pass);
 					
 					}
-				//}
-				//else
-				//{
+
 					document.getElementById('feedback').style.visibility="visible";
 					document.getElementById('feedback').style.color="red";
 					document.getElementById('feedback').style.border="solid 1px red";
 
 					document.getElementById('feedback').innerHTML="Please enter the userID and password";
-				//}
+				
 	
 			}
 			function returnUserRecords(us,pa){
@@ -73,3 +61,12 @@
                       return userType;
 
 			 }
+
+function myFunction() {
+				  var x = document.getElementById("myTopnav");
+				  if (x.className === "topnav") {
+				    x.className += " responsive";
+				  } else {
+				    x.className = "topnav";
+				  }
+				}
