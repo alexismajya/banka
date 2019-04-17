@@ -4,7 +4,7 @@
   "engines": {
     "npm":"6.7.0",
     "node":"11.13.0"
-  }
+  },
   "description": "Banka is a light-weight core banking application that powers banking operations like account creation, customer deposit and withdrawals.",
   "main": "server.js",
   "scripts": {
