@@ -1,8 +1,8 @@
-var express = require('express');
+import express from'express';
 var userSignInRouter = express.Router();
 
 
-const {signIn, viewUsers} = require('../controllers/user.signin');
+import {signIn} from'../controllers/user.signin';
 
 
 userSignInRouter.post('/api/v1/auth/signIn', signIn);
