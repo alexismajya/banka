@@ -35,7 +35,6 @@ module.exports = {
     },
     findAccount: (req, res) => {
       	const acc = info_accounts.find(a => a.accountNumber === req.params.accountNumber);
-      	console.log(res.send(acc));
          if (acc.length<1)  {
          	return res.status(404).json({error:404, message:'The account was not found'});
          }
