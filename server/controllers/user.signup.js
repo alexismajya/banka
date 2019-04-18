@@ -13,8 +13,6 @@ module.exports = {
         if (!req.body.lastName || !req.body.email || !req.body.password){
             return res.status(400).json('Fill out all required fields');
         }
-
-    else{
         const userData = {
         id:info_users.length +1,
         email: req.body.email,
@@ -23,11 +21,12 @@ module.exports = {
         password: bcrypt.hashSync(req.body.password,10),
         type:req.body.type, 
         isAdmin:req.body.isAdmin, 
-        //token:myTok.sign({ sub: userData.id }, config.secret)
+        
     };
+    const token=myTok.sign({ sub: userData.id }, config.secret);
      info_users.push(userData);
-     res.status(200).json({status:200, data: userData});
-    }
+     res.status(200).json({status:200, data: userData,token});
+
     },
 
     findUser:({ email, pass }) =>{
